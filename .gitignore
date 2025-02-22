@@ -1,0 +1,25 @@
+# Abaikan file konfigurasi sensitif
+config/database.php
+
+# Abaikan file database
+esurat.sql
+
+# Abaikan file atau folder hasil upload
+surat/
+
+# Abaikan log dan cache
+*.log
+*.cache
+
+# Abaikan file sementara editor/OS
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+
+# Abaikan library yang bisa diinstal ulang
+/vendor/
+node_modules/
+
+# Abaikan file dokumentasi sementara
+readme.text
