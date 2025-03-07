@@ -4,6 +4,7 @@ Sistem E-Surat dengan PHP Native untuk manajemen surat-menyurat di kantor.
 
 ## Fitur
 - Login (Admin dan Pegawai)
+- Send Password Via email
 - Dashboard (Hanya untuk Admin)
 - Manajemen Surat
 - Manajemen Pengguna
