@@ -1,0 +1,15 @@
+#Database = esurat;
+#PHP Version 8.2.12;
+#Apache Version 2.4.58;
+#Login E-Surat = {
+    'Admin' = 'username = admin','password = Admin123';
+    'Pegawai' = 'username = pegawai','password = User123';
+};
+#Fitur = {
+    'Login',
+    'Dashboard',
+    'CRUD',
+    'Filter Laporan',
+    'Cetak Laporan PDF',
+    'Cetak Laporan Excel',
+};

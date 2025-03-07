@@ -2,7 +2,9 @@
 
 include 'config/config.php';
 session_start();
-if (!isset($_SESSION['username'])) {
+
+if (!isset($_SESSION['email'])) {
+
   // Kalau belum login, alihkan ke halaman login
   header('Location: pages/login.php');
   exit;

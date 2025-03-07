@@ -2,36 +2,27 @@
 include '../config/config.php';
 session_start();
 
-
-
-if (isset($_SESSION['email'])) {
-
+if (isset($_SESSION['username'])) {
     header('Location: ../index.php?route=dashboard'); // Ganti sesuai halaman tujuan
     exit;
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-    $email =  mysqli_real_escape_string($conn, $_POST['email']);
+    $username =  mysqli_real_escape_string($conn, $_POST['username']);
     $password =  mysqli_real_escape_string($conn, $_POST['password']);
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    $query = "SELECT * FROM users WHERE email = '$email'";
-
+    $query = "SELECT * FROM users WHERE username = '$username'";
     $result = mysqli_query($conn, $query);
     $user = mysqli_fetch_assoc($result);
 
     if ($user && password_verify($password, $user['password'])) {
-
-        $_SESSION['email'] = $user['email'];
-
+        $_SESSION['username'] = $user['username'];
         $_SESSION['role'] = $user['role']; // Kalau ada role misalnya
         header("Location: ../index.php?route=dashboard"); // Redirect ke dashboard
         exit();
     } else {
-
-        echo "<script>alert('email atau password salah!');</script>";
-
+        echo "<script>alert('Username atau password salah!');</script>";
     }
 }
 ?>
@@ -95,26 +86,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 </div>
                             </div>
                             <div class="card-body">
-                                <form role="form" method="post" class="text-start">
-                                    <div class="input-group input-group-outline my-3">
-
-                                        <label class="form-label">email</label>
-                                        <input type="text" name="email" class="form-control">
-
-                                    </div>
+                                <h2>Lupa Password</h2>
+                                <form action="process_forgot.php" method="POST" class="text-start">
                                     <div class="input-group input-group-outline mb-3">
-                                        <label class="form-label">Password</label>
-                                        <input type="password" name="password" class="form-control">
+                                        <label for="email">Masukkan Email Anda:</label>
+                                        <input type="email" name="email" required>
                                     </div>
-                                    <div class="form-check form-switch d-flex align-items-center mb-3">
-                                        <input class="form-check-input" type="checkbox" id="rememberMe" checked>
-                                        <label class="form-check-label mb-0 ms-3" for="rememberMe">Remember me</label>
-                                    </div>
-                                    <a href="forget_password.php">Lupa Password</a>
-
-                                    <div class="text-center">
-                                        <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign in</button>
-                                    </div>
+                                    <button type="submit" class="btn btn-success">Kirim Link Reset</button>
                                 </form>
                             </div>
                         </div>
