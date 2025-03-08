@@ -11,14 +11,14 @@ try {
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com'; // Pakai Gmail
     $mail->SMTPAuth = true;
-    $mail->Username = 'cobakenbul@gmail.com'; // Ganti dengan email kamu
-    $mail->Password = 'gmea vxon nyyw gopd'; // Ganti dengan password aplikasi Gmail kamu
+    $mail->Username = 'excample@gmail.com'; // Ganti dengan email kamu
+    $mail->Password = 'xxxxxxxxxxxxxxx'; // Ganti dengan password aplikasi Gmail kamu
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
 
     // Pengirim & Penerima
-    $mail->setFrom('cobakenbul@gmail.com', 'Kenbul');
-    $mail->addAddress('melindaputri1006@gmail.com', 'Penerima'); // Ganti dengan email tujuan
+    $mail->setFrom('excample@gmail.com', 'Kenbul');
+    $mail->addAddress('penerima@gmail.com', 'Penerima'); // Ganti dengan email tujuan
 
     // Konten email
     $mail->isHTML(true);

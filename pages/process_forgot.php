@@ -43,13 +43,13 @@ if ($user) {
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'cobakenbul@gmail.com';
-        $mail->Password = 'gmea vxon nyyw gopd';
+        $mail->Username = 'excample@gmail.com';
+        $mail->Password = 'xxxxxxxxx';
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
         // Pengirim & Penerima
-        $mail->setFrom('cobakenbul@gmail.com', 'E-Surat');
+        $mail->setFrom('excample@gmail.com', 'E-Surat');
         $mail->addAddress($email);
 
         // Konten email
